@@ -4,6 +4,8 @@ import logging
 
 
 async def on_startup(_):
+    from utils.set_bot_cmd import set_default_cmd
+
     try:
         await bot.send_message(
             chat_id=chat_id,
@@ -15,7 +17,7 @@ async def on_startup(_):
             chat_id=chat_id,
             text=logging.exception(err)
         )
-    from utils.set_bot_cmd import set_default_cmd
+
     await set_default_cmd(dp)
 
 
