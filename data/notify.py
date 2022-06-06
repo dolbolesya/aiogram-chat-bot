@@ -13,3 +13,4 @@ async def on_shutdown(_):
         chat_id=chat_id,
         text='Bot stopped'
     )
+
