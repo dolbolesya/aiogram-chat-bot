@@ -4,6 +4,8 @@ import logging
 from aiogram import executor, types
 from bot import dp, bot
 from utils.notify import on_startup, on_shutdown
+import handlers
+
 
 logging.basicConfig(level=logging.INFO)
 

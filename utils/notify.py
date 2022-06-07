@@ -5,7 +5,6 @@ import logging
 
 async def on_startup(_):
     from utils.set_bot_cmd import set_default_cmd
-    import filters
 
     try:
         await bot.send_message(
@@ -16,11 +15,10 @@ async def on_startup(_):
         logging.exception(err)
         await bot.send_message(
             chat_id=chat_id,
-            text=logging.exception(err)
+            text=err
         )
 
     await set_default_cmd(dp)
-    filters.setup(dp)
 
 
 async def on_shutdown(_):
@@ -32,6 +30,7 @@ async def on_shutdown(_):
     except Exception as err:
         logging.exception(err)
         await bot.send_message(
+
             chat_id=chat_id,
-            text=logging.exception(err)
+            text=err
         )
