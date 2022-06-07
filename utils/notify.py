@@ -5,6 +5,7 @@ import logging
 
 async def on_startup(_):
     from utils.set_bot_cmd import set_default_cmd
+    import filters
 
     try:
         await bot.send_message(
@@ -19,6 +20,7 @@ async def on_startup(_):
         )
 
     await set_default_cmd(dp)
+    filters.setup(dp)
 
 
 async def on_shutdown(_):
