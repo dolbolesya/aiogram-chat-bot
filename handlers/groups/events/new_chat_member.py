@@ -11,3 +11,4 @@ async def event_new_chat_member(message: types.Message):
             chat_id=message.chat.id,
             text=f'Welcome {new_member.first_name} in {message.chat.title}'
         )
+
